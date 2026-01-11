@@ -1,0 +1,17 @@
+{
+  "name": "csszengarden-node",
+  "version": "1.0.0",
+  "description": "CSS Zen Garden - Node.js version",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

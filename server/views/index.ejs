@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="utf-8">
+  <title><%= head.title %></title>
+
+  <link rel="stylesheet" media="screen" href="<%= currentStyleSheet %>?v=8may2013">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="<%= zenUrls['zen-rss'] %>">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Dave Shea">
+  <meta name="description" content="<%= head.description %>">
+  <meta name="robots" content="all">
+
+  <% if (typekitId) { %>
+  <script src="http://use.typekit.net/<%= typekitId %>.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <% } %>
+
+  <!--[if lt IE 9]>
+  <script src="script/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<!--
+<%= head.comment %>
+-->
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+  <section class="intro" id="zen-intro">
+    <header role="banner">
+      <h1><%= intro.h1 %></h1>
+      <h2><%- intro.h2 %></h2>
+    </header>
+
+    <div class="summary" id="zen-summary" role="article">
+      <p><%- intro.summary_p1 %></p>
+      <p><%- intro.summary_p2 %></p>
+    </div>
+
+    <div class="preamble" id="zen-preamble" role="article">
+      <h3><%= intro.preamble_h3 %></h3>
+      <p><%- intro.preamble_p1 %></p>
+      <p><%- intro.preamble_p2 %></p>
+      <p><%- intro.preamble_p3 %></p>
+    </div>
+  </section>
+
+  <div class="main supporting" id="zen-supporting" role="main">
+    <div class="explanation" id="zen-explanation" role="article">
+      <h3><%= main.explanation_h3 %></h3>
+      <p><%- main.explanation_p1 %></p>
+      <p><%- main.explanation_p2 %></p>
+    </div>
+
+    <div class="participation" id="zen-participation" role="article">
+      <h3><%= main.participation_h3 %></h3>
+      <p><%- main.participation_p1 %></p>
+      <p><%- main.participation_p2 %></p>
+      <p><%- main.participation_p3 %></p>
+    </div>
+
+    <div class="benefits" id="zen-benefits" role="article">
+      <h3><%= main.benefits_h3 %></h3>
+      <p><%- main.benefits_p1 %></p>
+    </div>
+
+    <div class="requirements" id="zen-requirements" role="article">
+      <h3><%= main.requirements_h3 %></h3>
+      <p><%- main.requirements_p1 %></p>
+      <p><%- main.requirements_p2 %></p>
+      <p><%- main.requirements_p3 %></p>
+      <p><%- main.requirements_p4 %></p>
+      <p role="contentinfo"><%- main.requirements_p5 %></p>
+    </div>
+
+    <footer>
+      <a href="<%= zenUrls['zen-validate-html'] %>" title="<%= footer['zen-validate-html-title'] %>" class="zen-validate-html"><%= footer['zen-validate-html-text'] %></a>
+      <a href="<%= zenUrls['zen-validate-css'] %>" title="<%= footer['zen-validate-css-title'] %>" class="zen-validate-css"><%= footer['zen-validate-css-text'] %></a>
+      <a href="<%= zenUrls['zen-license'] %>" title="<%= footer['zen-license-title'] %>" class="zen-license"><%= footer['zen-license-text'] %></a>
+      <a href="<%= zenUrls['zen-accessibility'] %>" title="<%= footer['zen-accessibility-title'] %>" class="zen-accessibility"><%= footer['zen-accessibility-text'] %></a>
+      <a href="<%= zenUrls['zen-github'] %>" title="<%= footer['zen-github-title'] %>" class="zen-github"><%= footer['zen-github-text'] %></a>
+    </footer>
+
+  </div>
+
+
+  <aside class="sidebar" role="complementary">
+    <div class="wrapper">
+
+      <div class="design-selection" id="design-selection">
+        <h3 class="select"><%= sidebar['design-selection-h3'] %></h3>
+        <nav role="navigation">
+          <ul>
+            <%- designListHtml %>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="design-archives" id="design-archives">
+        <h3 class="archives"><%= sidebar['design-archives-h3'] %></h3>
+        <nav role="navigation">
+          <ul>
+            <%- navHtml %>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="zen-resources" id="zen-resources">
+        <h3 class="resources"><%= sidebar['design-resources-h3'] %></h3>
+        <ul>
+          <li class="view-css">
+            <a href="<%= currentStyleSheet %>" title="<%= sidebar['view-css-title'] %>">
+              <%- sidebar['view-css-text'] %>
+            </a>
+          </li>
+          <li class="css-resources">
+            <a href="<%= zenUrls['zen-resources'] %>" title="<%= sidebar['css-resources-title'] %>">
+              <%- sidebar['css-resources-text'] %>
+            </a>
+          </li>
+          <li class="zen-faq">
+            <a href="<%= zenUrls['zen-faq'] %>" title="<%= sidebar['zen-faq-title'] %>">
+              <%- sidebar['zen-faq-text'] %>
+            </a>
+          </li>
+          <li class="zen-submit">
+            <a href="<%= zenUrls['zen-submit'] %>" title="<%= sidebar['zen-submit-title'] %>">
+              <%- sidebar['zen-submit-text'] %>
+            </a>
+          </li>
+          <li class="zen-translations">
+            <a href="<%= zenUrls['zen-translations'] %>" title="<%= sidebar['zen-translations-title'] %>">
+              <%- sidebar['zen-translations-text'] %>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+</div>
+
+<!--
+<%= foot.comment %>
+-->
+<div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
+<div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
+
+</body>
+</html>
