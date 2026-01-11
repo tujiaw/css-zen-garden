@@ -209,8 +209,17 @@ app.get('/pages/*', (req, res) => {
   const pageName = requestPath.split('/').pop();
 
   const htmlPath = path.join(__dirname, '..', requestPath + '.html');
-  const phpPath = path.join(__dirname, '..', requestPath + '.php');
 
+  if (fs.existsSync(htmlPath)) {
+    res.sendFile(htmlPath);
+  } else {
+    res.status(404).send('Page not found');
+  }
+});
+
+// Handle examples routes
+app.get(['/examples/index', '/examples/index.html'], (req, res) => {
+  const htmlPath = path.join(__dirname, '..', 'examples', 'index.html');
   if (fs.existsSync(htmlPath)) {
     res.sendFile(htmlPath);
   } else {
