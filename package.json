@@ -1,0 +1,13 @@
+{
+  "name": "css-zen-garden",
+  "version": "1.0.0",
+  "description": "CSS Zen Garden - Node.js Version",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
