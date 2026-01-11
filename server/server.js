@@ -287,8 +287,13 @@ app.get('/pages/*', (req, res) => {
   }
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`CSS Zen Garden running at http://localhost:${PORT}/`);
-  console.log(`Current design: http://localhost:${PORT}/214/`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Start server only if not running on Vercel
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`CSS Zen Garden running at http://localhost:${PORT}/`);
+    console.log(`Current design: http://localhost:${PORT}/214/`);
+  });
+}
